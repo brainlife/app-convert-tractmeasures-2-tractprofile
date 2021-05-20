@@ -6,7 +6,7 @@
 # convert tractmeasures datatype to tractprofile datatype
 time singularity exec -e docker://brainlife/freesurfer-stats:1.2 ./convert_tractmeasures.py
 
-if [ ! "$(ls -A./profiles)" ]; then
+if [ ! "$(ls -A ./profiles)" ]; then
 	echo "complete"
 	exit 0
 else
