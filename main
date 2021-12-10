@@ -3,13 +3,8 @@
 #PBS -N app-convert-tractmeasures-to-tractprofile
 #PBS -l vmem=8gb
 
-# convert tractmeasures datatype to tractprofile datatype
-time singularity exec -e docker://brainlife/freesurfer-stats:1.2 ./convert_tractmeasures.py
+rm -f profiles
 
-if [ ! "$(ls -A./profiles)" ]; then
-	echo "complete"
-	exit 0
-else
-	echo "conversion failed somewhere. please check logs and derivatives"
-	exit 1
-fi
+set -ex
+
+time singularity exec -e docker://brainlife/freesurfer-stats:1.2 ./convert_tractmeasures.py
