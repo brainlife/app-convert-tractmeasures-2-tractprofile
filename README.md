@@ -3,6 +3,26 @@
 
 # Convert tractmeasures datatype to tractprofile datatype
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Converts a tractmeasures CSV (all tracts in one table) into the deprecated tractprofile format with one profile CSV per tract, using pandas.**
+
+Utility that splits the tractmeasures table by structureID and writes one <tract>_profiles.csv per tract without the subject, structure and node ID columns. Use it only to feed Apps that still require the deprecated tractprofile datatype.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.524](https://doi.org/10.25663/brainlife.app.524)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `tractmeasures` | `neuro/tractmeasures` | yes | Tract profiles table (tractmeasures.csv) with subjectID, structureID and nodeID columns. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `profiles` | `neuro/tractprofile-deprecated` | Directory with one <tract>_profiles.csv per tract (tractprofile format). |
+
+Runtime: container `brainlife/freesurfer-stats:1.2`; 1 CPUs; 0.17 h walltime.
+
+<!-- brainlife-app:end -->
+
 This app will This app is purely designed for use within brainlife as it separates a concatenated tractmeasures datatype, containing all of the data for all tracts in a given wmc datatype, into a single csv per tract.
 
 ### Authors
