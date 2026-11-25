@@ -10,9 +10,9 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-> 📍 **This branch, `v1.1`, is the brainlife.io App Convert tractmeasures datatype to tractprofile datatype** ([doi:10.25663/brainlife.app.524](https://doi.org/10.25663/brainlife.app.524)).
+> **This branch, `v1.1`, is the brainlife.io App Convert tractmeasures datatype to tractprofile datatype** ([doi:10.25663/brainlife.app.524](https://doi.org/10.25663/brainlife.app.524)).
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -22,19 +22,19 @@ Utility that splits the tractmeasures table by structureID and writes one <tract
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/tractmeasures` |
-| 📤 **Outputs** | `neuro/tractprofile-deprecated` |
-| 🐳 **Container** | `brainlife/freesurfer-stats:1.2` |
-| ⚙️ **Resources** | 1 CPUs · 0.17 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.524](https://doi.org/10.25663/brainlife.app.524) |
+| **Inputs** | `neuro/tractmeasures` |
+| **Outputs** | `neuro/tractprofile-deprecated` |
+| **Container** | `brainlife/freesurfer-stats:1.2` |
+| **Resources** | 1 CPUs · 0.17 h walltime |
+| **Run it** | [doi.org/10.25663/brainlife.app.524](https://doi.org/10.25663/brainlife.app.524) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `tractmeasures` | `neuro/tractmeasures` | yes | Tract profiles table (tractmeasures.csv) with subjectID, structureID and nodeID columns. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -42,15 +42,15 @@ Utility that splits the tractmeasures table by structureID and writes one <tract
 
 <!-- brainlife-app:end -->
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.524](https://doi.org/10.25663/brainlife.app.524), choose a `neuro/tractmeasures` dataset and press **Execute**. The App writes a `neuro/tractprofile-deprecated` dataset to your project.
 
 This App is designed for use within brainlife.io: it splits a concatenated tractmeasures table, which contains the profiles of all the tracts in a white matter classification, into a single CSV per tract. Use it only to feed Apps that still require the deprecated tractprofile datatype.
 
-### 💻 Locally
+### Locally
 
 You need [Singularity/Apptainer](https://apptainer.org/). The App runs in the `brainlife/freesurfer-stats:1.2` container (Python 3 with pandas).
 
@@ -69,7 +69,7 @@ You need [Singularity/Apptainer](https://apptainer.org/). The App runs in the `b
    ./main
    ```
 
-### 🧪 Sample data
+### Sample data
 
 You can download sample datasets from brainlife.io with the [brainlife CLI](https://github.com/brainlife/cli):
 
@@ -80,7 +80,7 @@ mkdir input
 bl dataset download <dataset-id>
 ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 profiles/
@@ -90,7 +90,7 @@ profiles/
 
 Each file holds the profile measures of one tract; the `subjectID`, `structureID` and `nodeID` columns of the input table are dropped.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -100,14 +100,14 @@ Each file holds the profile measures of one tract; the `subjectID`, `structureID
 - Fischl. FreeSurfer. *NeuroImage* 62:774-781 (2012). [doi:10.1016/j.neuroimage.2012.01.021](https://doi.org/10.1016/j.neuroimage.2012.01.021)
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
-## 👥 Authors
+## Authors
 
 - Brad Caron
 - Franco Pestilli (project director)
 
 **Contributors:** Soichi Hayashi
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -126,6 +126,6 @@ Each file holds the profile measures of one tract; the `subjectID`, `structureID
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 [MIT](LICENSE).
